@@ -5,7 +5,11 @@
  */
 package uk.ac.ncl;
 
+import uk.ac.ncl.entity.Cell;
 import uk.ac.ncl.ui.MainPanel;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class Main {
 

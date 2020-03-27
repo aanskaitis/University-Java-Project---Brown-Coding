@@ -19,11 +19,10 @@ import static uk.ac.ncl.Constants.*;
  *
  */
 public class MoveChecker {
-
     private Cell[][] cells;
 
     public MoveChecker(Cell[][] cells) {
-
+        this.cells = cells;
     }
 
     /**
@@ -73,6 +72,7 @@ public class MoveChecker {
      */
     public ArrayList<Cell> findPotentialMoves(CellStatus colour) {
         ArrayList<Cell> potentialMoves = new ArrayList<Cell>();
+        Cell[][] cells = new Cell[BOARD_SIZE][BOARD_SIZE];
         for (int i = 0; i <= BOARD_SIZE; i++) {
             for (int j = 0; j <= BOARD_SIZE; j++) {
                 if (this.cells[i][j].getValue() == CellStatus.EMPTY){
