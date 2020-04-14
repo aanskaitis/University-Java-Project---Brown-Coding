@@ -32,7 +32,7 @@ public class MoveChecker {
      * @return a piece to make a move
      */
     public Cell generateOpponent(CellStatus cellStatus) {
-        ArrayList<Cell> potentialMoves = findPotentialMoves(cellStatus);
+        ArrayList<Cell> potentialMoves = findPotentialMoves(CellStatus.DARK);
         int max_score = 0;
         Cell opponentsMove = null;
         for (int i = 0; i < potentialMoves.size(); i++){
@@ -72,8 +72,8 @@ public class MoveChecker {
      */
     public ArrayList<Cell> findPotentialMoves(CellStatus colour) {
         ArrayList<Cell> potentialMoves = new ArrayList<Cell>();
-        for (int i = 0; i <= BOARD_SIZE; i++) {
-            for (int j = 0; j <= BOARD_SIZE; j++) {
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            for (int j = 0; j < BOARD_SIZE; j++) {
                 if (this.cells[i][j].getValue() == CellStatus.EMPTY){
                     if (this.cells[i][j].isLegal(colour, cells)){
                         potentialMoves.add(this.cells[i][j]);
